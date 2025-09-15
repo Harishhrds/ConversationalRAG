@@ -21,7 +21,7 @@ load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 groq_api_key = os.getenv("GROQ_API_KEY")
-llm = ChatGroq(groq_api_key=groq_api_key,model="Llama3-8b-8192")
+llm = ChatGroq(groq_api_key=groq_api_key,model="llama-3.1-8b-instant")
 from langchain.prompts import ChatPromptTemplate
 
 template = """Answer the question based on the context below only.
@@ -64,6 +64,7 @@ if user_prompt:
         for i,doc in enumerate(response['context']):
             st.write(doc.page_content)
             st.write("________")
+
 
 
 
